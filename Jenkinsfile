@@ -9,10 +9,12 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             echo 'Wol'
             sh 'echo "Mr Rajesh"'
+            pwd(tmp: true)
+            emailext(subject: 'Hello', body: 'World')
           }
         }
 
